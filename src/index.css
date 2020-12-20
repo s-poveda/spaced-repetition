@@ -32,6 +32,10 @@ body {
 	flex-direction: column;
 }
 
+.centered.vertical.flex-container {
+	justify-content: center;
+}
 :root {
-  --font-size: calc(10px + 1vmin);
+	--font-size: calc(10px + 1vmin);
+	--cols-num: 16;
 }

@@ -1,19 +1,23 @@
-.login-form > div + div,.login-form footer {
+.registration-form > div + div,.registration-form footer {
 	margin-top: 6px;
 }
 
-.login-form > div > label + input {
+.registration-form > div > label + input {
 	margin-left: 10px;
 }
 
-.login-form footer button {
+.registration-form footer > * {
+	align-self: center;
+}
+
+.registration-form footer button {
 	height: 25px;
-	width: 75px;
-	grid-column: 8 / 9;
+	width: 80px;
+	grid-column: 8;
 	grid-row: 1 / 1;
 }
 
-.login-form footer a {
+.registration-form footer a {
 	grid-column: 7 / 10;
 	grid-row: 2 / 2;
 }

@@ -16,7 +16,7 @@ class RegistrationRoute extends Component {
 
   render() {
     return (
-      <section className='signup-section vertical flex-container'>
+      <section className='signup-section centered vertical flex-container'>
         <p>
           Practice learning a language with the spaced reptition revision technique.
         </p>
