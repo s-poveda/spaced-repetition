@@ -1,0 +1,23 @@
+:root {
+	--cols-num: 16;
+}
+
+header {
+	justify-content: space-between;
+}
+
+header > h1 {
+	grid-column: 1 / 5;
+}
+
+header > div, header > nav {
+	grid-column: 12 / 16;
+}
+
+nav {
+	display: flex;
+	flex-flow: row wrap;
+	vertical-align: middle;
+	justify-content: space-around;
+
+}
