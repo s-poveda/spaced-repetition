@@ -34,7 +34,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="grid-container">
+      <header className="grid">
         <h1>
           <Link to='/'>Spaced repetition</Link>
         </h1>

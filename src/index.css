@@ -13,9 +13,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.grid-container {
+.grid {
 	display: grid;
 	grid-template-columns: repeat(var(--cols-num, 16), 1fr);
+	gap: 6px 0px;
+}
+
+.two-row.grid {
+	grid-template-rows: repeat(2, 1fr);
+}
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.vertical.flex-container {
+	flex-direction: column;
 }
 
 :root {

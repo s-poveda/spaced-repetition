@@ -18,6 +18,7 @@ nav {
 	display: flex;
 	flex-flow: row wrap;
 	vertical-align: middle;
+	align-self: center;
 	justify-content: space-around;
 
 }

@@ -1,0 +1,7 @@
+.signup-section {
+	justify-content: center;
+}
+
+.signup-section > * {
+	text-align: center;
+}
