@@ -8,6 +8,7 @@ import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute';
 import LearningRoute from '../../routes/LearningRoute/LearningRoute';
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute';
+import { LangProvider } from '../../contexts/LanguageContext';
 import './App.css';
 
 export default class App extends Component {
@@ -20,7 +21,14 @@ export default class App extends Component {
 
   render() {
     const { hasError } = this.state;
+		const initialContxtVal = {
+			language: {},
+			words: [],
+			updateLang: language => (initialContxtVal.language = language),
+			updateWords: words => (initialContxtVal.words = words),
+		};
     return (
+			<LangProvider value={initialContxtVal} >
       <div className='App'>
         <Header />
         <main>
@@ -34,6 +42,7 @@ export default class App extends Component {
           </Switch>
         </main>
       </div>
+			</LangProvider>
     );
   }
 }
