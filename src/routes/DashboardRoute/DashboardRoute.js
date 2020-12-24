@@ -44,7 +44,7 @@ class DashboardRoute extends Component {
   render() {
     return (
         <section>
-          <h2>{this.context.language.name}</h2>
+          <h2>{this.us.language.name}</h2>
           <Link to='/learn'>Start practicing</Link>
           <p>
             <strong>{`Total correct answers: ${this.state.language.total_score}`}</strong>

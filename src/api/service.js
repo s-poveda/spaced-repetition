@@ -13,7 +13,12 @@ export default class Service {
 	static get(urlPath, headers) {
 		return fetchHandler(config.API_ENDPOINT + urlPath, { method: 'GET', headers });
 	}
-	static del(urlPath, req = { method: 'DELETE' }) {
-		return fetchHandler(config.API_ENDPOINT + urlPath, req);
+	static del(urlPath, headers) {
+		return fetchHandler(
+			config.API_ENDPOINT + urlPath,
+			{
+				method: 'DELETE',
+				headers,
+		});
 	}
 }
