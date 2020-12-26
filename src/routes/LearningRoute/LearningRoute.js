@@ -25,13 +25,14 @@ class LearningRoute extends Component {
           <button type='submit'>Submit your answer</button>
         </form>
         <div>
-          // REVIEW: this may need fixing with state properties. Unable to test code ATM
-          // Just going off of what tests have
+					<p>
+					Your total score is: {this.state.head.totalScore}
+					</p>
           <p>
-            You have answered this word correctly ${this.state.head.correct_count} times.
+            You have answered this word correctly {this.state.head.wordCorrectCount} times.
           </p>
           <p>
-            You have answered this word incorrectly ${this.state.head.incorrect_count} times.
+            You have answered this word incorrectly {this.state.head.wordIncorrectCount} times.
           </p>
         </div>
 			</section>
