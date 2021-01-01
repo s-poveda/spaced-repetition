@@ -21,4 +21,11 @@ export default class Service {
 				headers,
 		});
 	}
+	static post(urlPath, headers, body) {
+		return fetchHandler(config.API_ENDPOINT + urlPath, {
+			method: 'POST',
+			headers,
+			body: JSON.stringify(body),
+		});
+	}
 }

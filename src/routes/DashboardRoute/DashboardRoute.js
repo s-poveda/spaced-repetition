@@ -25,7 +25,7 @@ class DashboardRoute extends Component {
   }
 
   renderWords() {
-    const words = this.context.words.map((word, i) => (
+    const words = this.state.words.map((word, i) => (
       <li key={i}>
         <h4>{word.original}</h4>
 				<span className=''>

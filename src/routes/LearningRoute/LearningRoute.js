@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import LangService from '../../api/LangService';
+import LearningForm from '../../components/LearningForm/LearningForm';
 import './LearningRoute.css';
 class LearningRoute extends Component {
   state = { head: {} };
+
   async componentDidMount() {
     try {
       const head = await LangService.getHead();
@@ -12,31 +14,31 @@ class LearningRoute extends Component {
     }
   }
 
+	updateHead = head => {
+		this.setState({head});
+	}
+
   render() {
     return (
-			<section>
-				<div>
-				<h2>Translate the word:</h2>
-				<span>{this.state.head.nextWord}</span>
-				</div>
-        <form>
-          <label htmlFor='learn-guess-input'>{"What's the translation for this word?"}</label>
-          <input id='learn-guess-input' type='text' required />
-          <button type='submit'>Submit your answer</button>
-        </form>
+      <section id='learning-section'>
         <div>
-					<p>
-					Your total score is: {this.state.head.totalScore}
-					</p>
+          <h2>Translate the word:</h2>
+          <span>{this.state.head.nextWord}</span>
+        </div>
+        <LearningForm updateHead={this.updateHead} />
+        <div className='DisplayScore'>
+          <p>{`Your total score is: ${this.state.head.totalScore}`}</p>
           <p>
-            You have answered this word correctly {this.state.head.wordCorrectCount} times.
+            You have answered this word correctly{' '}
+            {this.state.head.wordCorrectCount} times.
           </p>
           <p>
-            You have answered this word incorrectly {this.state.head.wordIncorrectCount} times.
+            You have answered this word incorrectly{' '}
+            {this.state.head.wordIncorrectCount} times.
           </p>
         </div>
-			</section>
-		);
+      </section>
+    );
   }
 }
 
