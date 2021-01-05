@@ -20,3 +20,5 @@ prettier.*
 yarn-error.log*
 
 cypress/videos
+
+.vercel
