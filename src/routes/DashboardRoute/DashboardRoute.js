@@ -26,7 +26,7 @@ class DashboardRoute extends Component {
 
   renderWords() {
     const words = this.state.words.map((word, i) => (
-      <li key={i}>
+      <li key={i} style={{ border: '2px gray solid', }}>
         <h4>{word.original}</h4>
 				<span className=''>
         <p className='correct-count'>{`correct answer count: ${word.correct_count}`}</p>
@@ -37,7 +37,10 @@ class DashboardRoute extends Component {
     return (
       <>
         <h3>Words to practice</h3>
-        <ul>{words}</ul>
+        <ul
+				style={{ listStyleType: 'none' }}>
+					{words}
+				</ul>
       </>
     );
   }

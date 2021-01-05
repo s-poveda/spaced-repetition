@@ -13,6 +13,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+section {
+	text-align: center;
+}
+
 .grid {
 	display: grid;
 	grid-template-columns: repeat(var(--cols-num, 16), 1fr);
