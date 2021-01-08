@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Input, Required, Label } from '../Form/Form';
-import AuthApiService from '../../services/auth-api-service';
 import Button from '../Button/Button';
+import AuthApiService from '../../services/auth-api-service';
+import UserContext from '../../contexts/UserContext';
 import './RegistrationForm.css';
 
 class RegistrationForm extends Component {
@@ -11,6 +12,8 @@ class RegistrationForm extends Component {
   };
 
   state = { error: null };
+
+  static contextType = UserContext;
 
   firstInput = React.createRef();
 
@@ -22,10 +25,11 @@ class RegistrationForm extends Component {
       username: username.value,
       password: password.value,
     })
-      .then(user => {
+      .then(async ({ authToken }) => {
         name.value = '';
         username.value = '';
         password.value = '';
+        this.context.processLogin(authToken);
         this.props.onRegistrationSuccess();
       })
       .catch(res => {
