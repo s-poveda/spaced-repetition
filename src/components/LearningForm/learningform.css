@@ -1,3 +1,7 @@
 #guess-form label {
 	margin-bottom: 5px;
 }
+#guess-form {
+  margin-top: 1.5em;
+
+}

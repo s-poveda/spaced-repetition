@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LanguageContext from '../../contexts/LanguageContext';
 import LangService from '../../api/LangService';
+import './DashboardRoute.css';
 
 class DashboardRoute extends Component {
   state = { language: {}, words: [], error: null, loading: true };
@@ -26,7 +27,7 @@ class DashboardRoute extends Component {
 
   renderWords() {
     const words = this.state.words.map((word, i) => (
-      <li key={i} style={{ border: '2px gray solid', }}>
+      <li key={i} style={{ border: '2px #8d99ae solid', }}>
         <h4>{word.original}</h4>
 				<span className=''>
         <p className='correct-count'>{`correct answer count: ${word.correct_count}`}</p>
@@ -38,7 +39,7 @@ class DashboardRoute extends Component {
       <>
         <h3>Words to practice</h3>
         <ul
-				style={{ listStyleType: 'none' }}>
+				style={{ listStyleType: 'none', paddingLeft: 0, }}>
 					{words}
 				</ul>
       </>
@@ -53,7 +54,7 @@ class DashboardRoute extends Component {
 		);
 
     return (
-        <section>
+        <section id='dashboard'>
           <h2>{this.state.language.name}</h2>
           <Link to='/learn'>Start practicing</Link>
           <p>

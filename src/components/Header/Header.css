@@ -1,13 +1,16 @@
 header {
 	justify-content: space-between;
+  background-color: #2b2d42;
+  color: #edf2f4;
 }
 
 header > h1 {
-	grid-column: 1 / 5;
+	grid-column: 2 / 6;
 }
 
 header > div, header > nav {
 	grid-column: 12 / 16;
+  font-size: 20px;
 }
 
 nav {
@@ -17,4 +20,10 @@ nav {
 	align-self: center;
 	justify-content: space-around;
 
+}
+
+@media only screen and (max-width: 650px) {
+  header > div, header > nav {
+  	grid-column: 9 / 16;
+  }
 }
