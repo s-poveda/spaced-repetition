@@ -12,12 +12,26 @@
 
 .registration-form footer button {
 	height: 25px;
-	width: 80px;
-	grid-column: 8;
+	width: 100px;
+	grid-column: 8 / 10;
 	grid-row: 1 / 1;
 }
 
 .registration-form footer a {
 	grid-column: 7 / 10;
 	grid-row: 2 / 2;
+}
+
+@media only screen and (max-width: 600px) {
+  .registration-form footer button {
+  	height: 25px;
+    width: auto;
+  	grid-column: 6 / 10;
+  	grid-row: 1 / 1;
+  }
+
+  .registration-form footer a {
+  	grid-column: 4 / 12;
+  	grid-row: 2 / 2;
+  }
 }
